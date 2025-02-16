@@ -7,6 +7,10 @@ public class HelloWorld {
         return "Hello " + name;
     }
 
+    public static String printConCac() {
+        reutnr "Con cac";
+    }
+
     public static void main(String[] args) {
         System.out.println(printHello());
     }
