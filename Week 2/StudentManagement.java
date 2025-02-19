@@ -5,14 +5,24 @@ import java.util.Map;
 
 public class StudentManagement {
 
-    // Kiểm tra 2 sinh viên có cùng lớp hay không
+    /**
+     * Kiểm tra xem hai sinh viên có cùng lớp hay không.
+     *
+     * @param s1 Sinh viên thứ nhất.
+     * @param s2 Sinh viên thứ hai.
+     * @return Trả về true nếu hai sinh viên cùng lớp, false nếu không.
+     */
     public static boolean sameGroup(Student s1, Student s2) {
         return s1.getGroup().equals(s2.getGroup());
     }
 
     Student[] students = new Student[100]; // Mảng chứa sinh viên
 
-    // Thêm sinh viên vào mảng
+    /**
+     * Thêm một sinh viên mới vào mảng sinh viên.
+     *
+     * @param newStudent Sinh viên cần thêm vào mảng.
+     */
     public void addStudent(Student newStudent) {
         for (int i = 0; i < students.length; i++) {
             if (students[i] == null) { // Nếu vị trí trống, thêm sinh viên
@@ -22,6 +32,11 @@ public class StudentManagement {
         }
     }
 
+    /**
+     * Trả về thông tin các sinh viên, nhóm theo lớp.
+     *
+     * @return Chuỗi chứa thông tin sinh viên nhóm theo lớp.
+     */
     public String studentsByGroup() {
         StringBuilder result = new StringBuilder();
         Map<String, List<Student>> groupedStudents = new LinkedHashMap<>();
@@ -46,6 +61,11 @@ public class StudentManagement {
         return result.toString().trim(); 
     }
 
+    /**
+     * Xóa một sinh viên khỏi mảng theo mã sinh viên.
+     *
+     * @param id Mã sinh viên cần xóa.
+     */
     public void removeStudent(String id) {
         for (int i = 0; i < students.length; i++) {
             if (students[i] != null && students[i].getId().equals(id)) {
@@ -56,22 +76,5 @@ public class StudentManagement {
                 students[students.length - 1] = null;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Student s1 = new Student("Nguyen Van A", "17020001", "1");
-        Student s2 = new Student("Nguyen Van B", "17020002", "2");
-        Student s3 = new Student("Nguyen Van C", "17020003", "1");
-
-        StudentManagement manager = new StudentManagement();
-        manager.addStudent(s1);
-        manager.addStudent(s2);
-        manager.addStudent(s3);
-
-        System.out.println(manager.studentsByGroup());
-        
-        manager.removeStudent("17020002");
-
-        System.out.println(manager.studentsByGroup());
     }
 }

@@ -1,28 +1,46 @@
 public class Fibonacci {
-    public static long fibonacci(int n) {
+
+    /**
+     * Tính số Fibonacci thứ n.
+     * Dãy Fibonacci bắt đầu từ 0 và 1, với mỗi số sau là tổng của hai số liền trước.
+     * Nếu n < 0, phương thức trả về -1.
+     * Nếu số Fibonacci thứ n vượt quá giá trị tối đa của kiểu dữ liệu long, 
+     * phương thức trả về Long.MAX_VALUE.
+     *
+     * @param n Số tự nhiên n, chỉ số trong dãy Fibonacci cần tính.
+     * @return Số Fibonacci thứ n.
+     */
+    public static long fibonacci(long n) {
         if (n < 0) {
             return -1;
         }
-        if (n > 92) { // fibonacci(n) exceeds Long.MAX_VALUE for n > 92
-            return Long.MAX_VALUE;
-        }
+
         if (n == 0) {
             return 0;
         }
         if (n == 1) {
             return 1;
         }
-        long a = fibonacci(n - 1);
-        long b = fibonacci(n - 2);
-        if (Long.MAX_VALUE - a < b) { // check for overflow
-            return Long.MAX_VALUE;
+
+        long a = 0;
+        long b = 1;
+        long result = 0;
+
+        for (long i = 2; i <= n; i++) {
+            result = a + b;
+            a = b;
+            b = result;
+
+            if (result < 0) {
+                return Long.MAX_VALUE;
+            }
         }
-        return a + b;
+
+        return result;
     }
 
     public static void main(String[] args) {
-        System.out.println(fibonacci(10)); // 55
-        System.out.println(fibonacci(92)); // 7540113804746346429
-        System.out.println(fibonacci(93)); // 7540113804746346429
+        long n = 50;
+        System.out.println("Fibonacci thứ " + n + " là: " + fibonacci(n));
     }
 }
