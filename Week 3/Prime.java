@@ -1,7 +1,9 @@
+
 public class Prime {
+
     /**
-     * Kiểm tra một số nguyên dương n có phải là số nguyên tố hay không.
-     * Số nguyên tố là số nguyên dương lớn hơn 1 chỉ chia hết cho 1 và chính nó.
+     * Kiểm tra một số nguyên dương n có phải là số nguyên tố hay không. Số
+     * nguyên tố là số nguyên dương lớn hơn 1 chỉ chia hết cho 1 và chính nó.
      *
      * @param n Số nguyên dương cần kiểm tra.
      * @return Trả về true nếu n là số nguyên tố, ngược lại trả về false.
