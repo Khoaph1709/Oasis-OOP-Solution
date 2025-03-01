@@ -426,8 +426,3 @@ void testStacksAndQueues() {
         std::cout << "Expected exception: " << e.what() << std::endl;
     }
 }
-
-int main() {
-    testStacksAndQueues();
-    return 0;
-}

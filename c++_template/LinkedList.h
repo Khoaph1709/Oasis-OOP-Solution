@@ -481,6 +481,21 @@ public:
             temp = temp->prev;
         }
     }
+
+    int countTriplets() {
+        int result = 0;
+        Node* current = head;
+        while (current != nullptr) {
+            if (current->prev != nullptr && current->next != nullptr) {
+                T sum = current->prev->data + current->data + current->next->data;
+                if (sum == 0) {
+                    result++;
+                }
+            }
+            current = current->next;
+        }
+        return result;
+    }
 };
 
 //-------------------- TESTING FUNCTION --------------------
@@ -587,9 +602,4 @@ void testLinkedLists() {
     doublyList.displayForward();
     std::cout << "After popBack (backward): ";
     doublyList.displayBackward();
-}
-
-int main() {
-    testLinkedLists<int>();
-    return 0;
 }

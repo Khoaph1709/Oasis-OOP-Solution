@@ -1,0 +1,42 @@
+public class Circle implements GeometricObject {
+    private Point center;
+    private final double pi;
+    private double radius;
+
+    public Circle(Point center, double radius) {
+        this.center = center;
+        this.radius = radius;
+        this.pi = 3.14;
+    }
+
+    public Point getCenter() {
+        return center;
+    }
+
+    public void setCenter(Point center) {
+        this.center = center;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double getArea() {
+        return pi * radius * radius;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 2 * pi * radius;
+    }
+
+    @Override
+    public String getInfo() {
+        return String.format("Circle[(%.2f,%.2f),%.2f]", center.getPointX(), center.getPointY(), radius);
+    }
+}
