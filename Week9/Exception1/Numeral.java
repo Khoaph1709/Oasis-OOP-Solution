@@ -1,4 +1,4 @@
-public class Numeral implements Expression {
+public class Numeral extends Expression {
     private double value;
 
     public Numeral() {
@@ -9,9 +9,14 @@ public class Numeral implements Expression {
         this.value = value;
     }
 
+    
     @Override
     public String toString() {
-        return String.valueOf(value);
+        if (value % 1 == 0) {
+            return String.valueOf((int) value);
+        } else {
+            return String.valueOf(value);
+        }
     }
 
     @Override

@@ -1,8 +1,9 @@
 public class Car extends Vehicle {
     private int numberOfDoors;
 
-    public Car(String brand, String model, String registrationNumber, Person Owner, int numberOfDoors) {
-        super(brand, model, registrationNumber, Owner);
+    public Car(String brand, String model, 
+    String registrationNumber, Person owner, int numberOfDoors) {
+        super(brand, model, registrationNumber, owner);
         this.numberOfDoors = numberOfDoors;
     }
 
@@ -12,7 +13,8 @@ public class Car extends Vehicle {
         sb.append("Car:").append("\n").append("\t");
         sb.append("Brand: ").append(getBrand()).append("\n").append("\t");
         sb.append("Model: ").append(getModel()).append("\n").append("\t");
-        sb.append("Registration Number: ").append(getRegistrationNumber()).append("\n").append("\t");
+        sb.append("Registration Number: ")
+        .append(getRegistrationNumber()).append("\n").append("\t");
         sb.append("Number of Doors: ").append(numberOfDoors).append("\n").append("\t");
         sb.append("Belongs to ").append(super.getOwner().getInfo()).append("\n");
         

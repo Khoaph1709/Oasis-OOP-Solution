@@ -1,4 +1,4 @@
-public class Square implements Expression {
+public class Square extends Expression {
     private Expression expression;
 
     public Square(Expression expression) {
@@ -7,7 +7,7 @@ public class Square implements Expression {
 
     @Override
     public String toString() {
-        return "(" + expression + ")^2";
+        return "(" + expression + ") ^ 2";
     }
 
     @Override

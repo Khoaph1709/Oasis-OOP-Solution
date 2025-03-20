@@ -23,6 +23,9 @@ public class Point {
         this.pointY = pointY;
     }
 
+    /**
+     * .
+     */
     public double distance(Point point) {
         double x = point.getPointX() - this.pointX;
         double y = point.getPointY() - this.pointY;

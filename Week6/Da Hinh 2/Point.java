@@ -24,8 +24,16 @@ public class Point {
     public void setPointY(double y) {
         pointY = y;
     }
+
+    /**
+     * Calculates the Euclidean distance between the current point and another specified point.
+     *
+     * @param p the point to which the distance is calculated
+     * @return the Euclidean distance between this point and the specified point
+     */
     public double distance(Point p) {
-        return Math.sqrt((pointX - p.pointX) * (pointX - p.pointX) + (pointY - p.pointY) * (pointY - p.pointY));
+        return Math.sqrt((pointX - p.pointX) * (pointX - p.pointX)
+                + (pointY - p.pointY) * (pointY - p.pointY));
     }
 
     @Override
@@ -33,8 +41,10 @@ public class Point {
         if (p instanceof Point) {
             double epsilon = 0.001;
             Point point = (Point) p;
-            if (Math.abs(pointX - point.pointX) < epsilon && Math.abs(pointY - point.pointY) < epsilon)
+            if (Math.abs(pointX - point.pointX) < epsilon
+                    && Math.abs(pointY - point.pointY) < epsilon) {
                 return true;
+            }
         }
         return false;
     }

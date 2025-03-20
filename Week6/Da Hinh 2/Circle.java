@@ -7,11 +7,37 @@ public class Circle extends Shape {
         radius = 1.0;
     }
 
+    public Circle(double radius) {
+        this();
+        this.radius = radius;
+    }
+
+    /**
+     * Constructs a Circle object with the specified radius, color, and filled status.
+     *
+     * @param radius the radius of the circle
+     * @param color the color of the circle
+     * @param filled the filled status of the circle; true if filled, false otherwise
+     */
+    public Circle(double radius, String color, boolean filled) {
+        this(radius);
+        this.color = color;
+        this.filled = filled;
+    }
+
     public Circle(Point center, double radius) {
         this.center = center;
         this.radius = radius;
     }
 
+    /**
+     * Constructs a Circle object with the specified center, radius, color, and filled status.
+     *
+     * @param center the center point of the circle
+     * @param radius the radius of the circle
+     * @param color the color of the circle
+     * @param filled the filled status of the circle; true if filled, false otherwise
+     */
     public Circle(Point center, double radius, String color, boolean filled) {
         super(color, filled);
         this.center = center;
@@ -46,7 +72,10 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return "Circle[center=" + center + ",radius=" + radius + ",color=" + color + ",filled=" + filled + "]";
+        return "Circle[center=" + center
+                + ",radius=" + radius
+                + ",color=" + color
+                + ",filled=" + filled + "]";
     }
 
     @Override
@@ -64,37 +93,5 @@ public class Circle extends Shape {
     @Override
     public int hashCode() {
         return center.hashCode() + Double.hashCode(radius);
-    }
-
-    public static void main(String[] args) {
-        // Test constructors
-        Circle c1 = new Circle();
-        Circle c2 = new Circle(new Point(2.0, 2.0), 3.0);
-        Circle c3 = new Circle(new Point(1.0, 1.0), 2.0, "red", true);
-
-        // Test getters and setters
-        System.out.println("Initial center of c1: " + c1.getCenter());
-        System.out.println("Initial radius of c1: " + c1.getRadius());
-        
-        c1.setCenter(new Point(3.0, 3.0));
-        c1.setRadius(4.0);
-        System.out.println("After setting, center of c1: " + c1.getCenter());
-        System.out.println("After setting, radius of c1: " + c1.getRadius());
-
-        // Test area and perimeter
-        System.out.println("Area of c2: " + String.format("%.2f", c2.getArea()));
-        System.out.println("Perimeter of c2: " + String.format("%.2f", c2.getPerimeter()));
-
-        // Test toString
-        System.out.println("c3 toString: " + c3.toString());
-
-        // Test equals and hashCode
-        Circle c4 = new Circle(new Point(2.0, 2.0), 3.0);
-        System.out.println("c2 equals c4: " + c2.equals(c4));
-        System.out.println("c2 hashCode: " + c2.hashCode());
-        System.out.println("c4 hashCode: " + c4.hashCode());
-
-        Circle c5 = new Circle(new Point(2.0, 2.1), 3.0);
-        System.out.println("c2 equals c5: " + c2.equals(c5));
     }
 }

@@ -2,6 +2,7 @@
 #include <vector>
 #include <stdexcept>
 
+
 //-------------------- BINARY HEAP (MAX HEAP) --------------------
 class MaxHeap {
 private:
@@ -125,15 +126,18 @@ public:
     // Return the maximum element without removing it
     // Should throw underflow_error if heap is empty
     int peekMax() {
-        // TODO: Implement peekMax function
-        return array[0]; // Placeholder, replace with correct implementation
+        // Implementation of peekMax function
+        if (isEmpty()) {
+            throw std::underflow_error("Heap is empty");
+        }
+        return array[0];
     }
 
     // Remove a node at the given index
     // Should throw underflow_error if heap is empty
     // Should throw out_of_range if index is invalid
     int removeAt(int index) {
-        // TODO: Implement removeAt function
+        // Implementation of removeAt function
         if (isEmpty()) {
             throw std::underflow_error("Heap is empty");
         }
@@ -143,10 +147,11 @@ public:
         int removedValue = array[index];
         array[index] = array[size - 1];
         size--;
-        if (size > 0 && index < size) {
-            sink(index, size);
-            if (array[index] == array[parent(index)]) {
+        if (index < size) {
+            if (index > 0 && array[index] > array[parent(index)]) {
                 swim(index);
+            } else {
+                sink(index, size);
             }
         }
         return removedValue;

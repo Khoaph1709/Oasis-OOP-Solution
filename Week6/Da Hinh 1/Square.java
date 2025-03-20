@@ -34,6 +34,9 @@ public class Square extends Rectangle {
 
     @Override
     public String toString() {
-        return "Square[side=" + super.getWidth() + ",color=" + super.getColor() + ",filled=" + super.isFilled() + "]";
+        return "Square[side="
+                + super.getWidth() + ",color="
+                + super.getColor() + ",filled="
+                + super.isFilled() + "]";
     }
 }

@@ -1,10 +1,10 @@
-abstract public class Shape {
+public abstract class Shape {
     protected String color;
     protected boolean filled;
 
     public Shape() {
-        this.color = "red";
-        this.filled = true;
+        this.color = null;
+        this.filled = false;
     }
 
     public Shape(String color, boolean filled) {
@@ -28,9 +28,9 @@ abstract public class Shape {
         this.filled = filled;
     }
 
-    abstract public double getArea();
+    public abstract double getArea();
 
-    abstract public double getPerimeter();
+    public abstract double getPerimeter();
 
     @Override
     public String toString() {

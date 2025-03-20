@@ -7,50 +7,71 @@ public class Week8Task2 {
         throw new ArithmeticException();
     }
 
+    /**
+     *.
+     */
     public String arithmeticExTest() {
         try {
             arithmeticEx();
         } catch (ArithmeticException e) {
-            return "ArithmeticException";
+            return "Lỗi Arithmetic";
         }
         return "Khong co loi";
     }
 
+    /**
+     *.
+     */
     public void nullPointerEx() throws NullPointerException {
         throw new NullPointerException();
     }
 
+    /**
+     *.
+     */
     public String nullPointerExTest() {
         try {
             nullPointerEx();
         } catch (NullPointerException e) {
-            return "NullPointerException";
+            return "Lỗi Null Pointer";
         }
         return "Khong co loi";
     }
 
+    /**
+     *.
+     */
     public void arrayIndexOutOfBoundsEx() throws ArrayIndexOutOfBoundsException {
         throw new ArrayIndexOutOfBoundsException();
     }
 
+    /**
+     *.
+     */
     public String arrayIndexOutOfBoundsExTest() {
         try {
             arrayIndexOutOfBoundsEx();
         } catch (ArrayIndexOutOfBoundsException e) {
-            return "ArrayIndexOutOfBoundsException";
+            return "Lỗi Array Index Out of Bounds";
         }
         return "Khong co loi";
     }
 
+    /**
+     *.
+     */
     public void fileNotFoundEx() throws FileNotFoundException {
         throw new FileNotFoundException();
     }
 
+    /**
+     *.
+     */
     public String fileNotFoundExTest() {
         try {
             fileNotFoundEx();
         } catch (FileNotFoundException e) {
-            return "FileNotFoundException";
+            return "Lỗi File Not Found";
         }
         return "Khong co loi";
     }
@@ -59,11 +80,14 @@ public class Week8Task2 {
         throw new IOException();
     }
 
+    /**
+     * .
+     */
     public String ioExTest() {
         try {
             ioEx();
         } catch (IOException e) {
-            return "IOException";
+            return "Lỗi IO";
         }
         return "Khong co loi";
     }

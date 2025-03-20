@@ -5,37 +5,54 @@ import java.util.List;
 public class Person {
     private String name;
     private String address;
-    private final List<Vehicle> vehicles;
+    private final List<Vehicle> vehicleList;
 
+    /**
+     * .
+     */
     public Person(String name, String address) {
         this.name = name;
         this.address = address;
-        this.vehicles = new ArrayList<>();
+        this.vehicleList = new ArrayList<>();
     }
 
+    /**
+     * .
+     */
     public void addVehicle(Vehicle vehicle) {
-        vehicles.add(vehicle);
+        for (int i = 0; i < vehicleList.size(); i++) {
+            if (vehicleList.get(i).equals(vehicle)) {
+                return;
+            }
+        }
+        vehicleList.add(vehicle);
     }
 
+    /**
+     * .
+     */
     public void removeVehicle(String registrationNumber) {
-        for (int i = 0; i < vehicles.size(); i++) {
-            if (vehicles.get(i).getRegistrationNumber().equals(registrationNumber)) {
-                vehicles.remove(i);
+        for (int i = 0; i < vehicleList.size(); i++) {
+            if (vehicleList.get(i).getRegistrationNumber().equals(registrationNumber)) {
+                vehicleList.remove(i);
                 break;
             }
         }
     }
 
-    public String getVehicleInfo() {
+    /**
+     * .
+     */
+    public String getVehiclesInfo() {
         StringBuilder sb = new StringBuilder();
-        if (vehicles.isEmpty()) {
+        if (vehicleList.isEmpty()) {
             sb.append(name);
-            sb.append(" has no vehicles!");
+            sb.append(" has no vehicle!");
             return sb.toString();        
         } else {
             sb.append(name);
             sb.append(" has:").append("\n").append("\n");
-            for (Vehicle vehicle : vehicles) {
+            for (Vehicle vehicle : vehicleList) {
                 sb.append(vehicle.getInfo());
             }
             return sb.toString();

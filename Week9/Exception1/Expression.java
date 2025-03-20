@@ -1,6 +1,6 @@
-public interface Expression {
+public abstract class Expression {
     @Override
-    String toString();
+    public abstract String toString();
 
-    double evaluate();
+    abstract double evaluate();
 }

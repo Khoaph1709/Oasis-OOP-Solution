@@ -3,8 +3,8 @@ public abstract class Shape {
     protected boolean filled;
 
     public Shape() {
-        color = "green";
-        filled = true;
+        color = null;
+        filled = false;
     }
 
     public Shape(String color, boolean filled) {

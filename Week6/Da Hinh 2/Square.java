@@ -39,7 +39,8 @@ public class Square extends Rectangle {
         if (obj instanceof Square) {
             Square s = (Square) obj;
             double epsilon = 0.001;
-            if (Math.abs(getSide() - s.getSide()) < epsilon && getTopLeft().equals(s.getTopLeft())) {
+            if (Math.abs(getSide() - s.getSide()) < epsilon
+                    && getTopLeft().equals(s.getTopLeft())) {
                 return true;
             }
         }
@@ -48,7 +49,10 @@ public class Square extends Rectangle {
 
     @Override
     public String toString() {
-        return "Square[topLeft=" + getTopLeft() + ",side=" + getSide() + ",color=" + getColor() + ",filled=" + isFilled() + "]";
+        return "Square[topLeft=" + getTopLeft()
+                + ",side=" + getSide()
+                + ",color=" + getColor()
+                + ",filled=" + isFilled() + "]";
     }
 
     @Override

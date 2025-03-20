@@ -1,12 +1,11 @@
 public class Circle implements GeometricObject {
     private Point center;
-    private final double pi;
+    public static final double PI = 3.14;
     private double radius;
 
     public Circle(Point center, double radius) {
         this.center = center;
         this.radius = radius;
-        this.pi = 3.14;
     }
 
     public Point getCenter() {
@@ -27,16 +26,19 @@ public class Circle implements GeometricObject {
 
     @Override
     public double getArea() {
-        return pi * radius * radius;
+        return PI * radius * radius;
     }
 
     @Override
     public double getPerimeter() {
-        return 2 * pi * radius;
+        return 2 * PI * radius;
     }
 
     @Override
     public String getInfo() {
-        return String.format("Circle[(%.2f,%.2f),%.2f]", center.getPointX(), center.getPointY(), radius);
+        return String.format("Circle[(%.2f,%.2f),r=%.2f]", 
+        center.getPointX(), 
+        center.getPointY(), 
+        radius);
     }
 }

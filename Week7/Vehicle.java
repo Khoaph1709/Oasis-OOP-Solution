@@ -4,6 +4,9 @@ public abstract class Vehicle {
     protected String registrationNumber;
     protected Person owner;
 
+    /**
+     * .
+     */
     public Vehicle(String brand, String model, String registrationNumber, Person owner) {
         this.brand = brand;
         this.model = model;
@@ -13,10 +16,24 @@ public abstract class Vehicle {
 
     public abstract String getInfo();
 
+    /**
+     * .
+     */
     public void transferOwnership(Person newOwer) {
-        newOwer.addVehicle(this);
-        this.owner.removeVehicle(this.registrationNumber);
+        if (this.owner != null) {
+            this.owner.removeVehicle(this.getRegistrationNumber());
+        }
         this.owner = newOwer;
+        newOwer.addVehicle(this);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Vehicle) {
+            Vehicle other = (Vehicle) obj;
+            return this.registrationNumber.equals(other.registrationNumber);
+        }
+        return false;
     }
 
     public String getBrand() {

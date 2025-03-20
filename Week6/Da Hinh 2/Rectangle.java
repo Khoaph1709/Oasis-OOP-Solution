@@ -3,25 +3,53 @@ public class Rectangle extends Shape {
     protected double width;
     protected double length;
 
+    /**
+     * Creates a default instance of the Rectangle class.
+     * The rectangle is*/
     public Rectangle() {
-        topLeft = new Point(0,0);
+        topLeft = new Point(0, 0);
         width = 1.0;
         length = 1.0;
     }
 
+    /**
+     * Constructs a Rectangle object with the specified width and length.
+     * The top-left corner of the rectangle is initialized to point (0, 0).
+     *
+     * @param width the width of the rectangle
+     * @param length the length of the rectangle
+     */
     public Rectangle(double width, double length) {
-        topLeft = new Point(0,0);
+        topLeft = new Point(0, 0);
         this.width = width;
         this.length = length;
     }
 
+    /**
+     * Constructs a Rectangle object with specified width, length, color, and filled attributes.
+     *
+     * @param width the width of the rectangle
+     * @param length the length of the rectangle
+     * @param color the color of the rectangle
+     * @param filled the filled status of the rectangle; true if filled, false otherwise
+     */
     public Rectangle(double width, double length, String color, boolean filled) {
         super(color, filled);
-        topLeft = new Point(0,0);
+        topLeft = new Point(0, 0);
         this.width = width;
         this.length = length;
     }
 
+    /**
+     * Constructs a Rectangle object with the specified top-left corner, width, length, color,
+     * and filled status.
+     *
+     * @param topLeft the top-left corner of the rectangle as a Point object
+     * @param width the width of the rectangle
+     * @param length the length of the rectangle
+     * @param color the color of the rectangle
+     * @param filled the filled status of the rectangle; true if filled, false otherwise
+     */
     public Rectangle(Point topLeft, double width, double length, String color, boolean filled) {
         super(color, filled);
         this.topLeft = topLeft;
@@ -68,7 +96,9 @@ public class Rectangle extends Shape {
         if (obj instanceof Rectangle) {
             Rectangle r = (Rectangle) obj;
             double epsilon = 0.001;
-            if (Math.abs(width - r.width) < epsilon && Math.abs(length - r.length) < epsilon && topLeft.equals(r.topLeft)) {
+            if (Math.abs(width - r.width) < epsilon
+                    && Math.abs(length - r.length) < epsilon
+                    && topLeft.equals(r.topLeft)) {
                 return true;
             }
         }
@@ -82,6 +112,10 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return "Rectangle[topLeft=" + topLeft + ",width=" + width + ",length=" + length + ",color=" + color + ",filled=" + filled + "]";
+        return "Rectangle[topLeft=" + topLeft
+                + ",width=" + width
+                + ",length=" + length
+                + ",color=" + color
+                + ",filled=" + filled + "]";
     }
 }
