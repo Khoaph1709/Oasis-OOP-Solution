@@ -3,12 +3,18 @@ public class Person implements Comparable<Person> {
     protected int age;
     protected String address;
 
+    /**
+     * .
+     */
     public Person() {
         name = null;
         age = 0;
         address = null;
     }
 
+    /**
+     * .
+     */
     public Person(String name, int age, String address) {
         this.name = name;
         this.age = age;
@@ -49,10 +55,8 @@ public class Person implements Comparable<Person> {
 
     @Override
     public String toString() {
-        return "Person{" +
-               "name='" + name + '\'' +
-               ", age=" + age +
-               ", address='" + address + '\'' +
-               '}';
+        return "Person{" 
+        + "name='" + name + '\'' 
+        + ", age=" + age + ", address='" + address + '\'' + '}';
     }
 }
